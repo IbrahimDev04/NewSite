@@ -1,0 +1,23 @@
+﻿@model UpdateCategoryVM
+
+<div class="card">
+    <div class="card-body">
+        <div class="card">
+            <div class="card-body" style="margin-top:60px;">
+                <form method="post">
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label"></label>
+                        <input asp-for="Name" class="form-control">
+                        <span asp-validation-for="Name"></span>
+                    </div>
+                    <div class="mb-3">
+                        <label asp-for="IconName" class="form-label"></label>
+                        <input asp-for="IconName" class="form-control">
+                        <span asp-validation-for="IconName"></span>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

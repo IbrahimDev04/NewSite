@@ -1,0 +1,63 @@
+﻿@model List<GetCategoryAdminVM>
+
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-body">
+            <h3 class="fw-semibold mb-0" style="color:darkgrey;">Category</h3>
+            <div class="table-responsive">
+                <a asp-action="Create" type="button" class="btn float-end btn-outline-primary m-1">Create</a>
+                <table class="table table-bordered text-nowrap mb-0 align-middle">
+                    <thead class="text-dark fs-4">
+                        <tr>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Id</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Name</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Icon</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Create Date</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Update Date</h6>
+                            </th>
+                            <th class="border-bottom-0">
+                                <h6 class="fw-semibold mb-0">Action</h6>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">@item.Id</h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">@item.Name</h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">@item.IconName</h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">@item.CreatedTime</h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    <h6 class="fw-semibold mb-0">@item.UpdatedTime</h6>
+                                </th>
+                                <th class="border-bottom-0">
+                                    <a type="button" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-outline-danger m-1">Delete</a>
+                                    <a type="button" asp-action="Update" asp-route-id="@item.Id" class="btn btn-outline-success m-1">Update</a>
+                                </th>
+                            </tr>
+                        }
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
